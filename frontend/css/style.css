@@ -1,0 +1,152 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  a {
+    color: inherit;
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  header .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar li {
+    margin-left: 20px;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  /* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  footer .container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+  /* Vehicle Detail */
+.vehicle-detail {
+    padding: 50px 0;
+}
+.vehicle-detail .container {
+    display: flex;
+}
+.vehicle-images {
+    flex: 1;
+    margin-right: 20px;
+}
+.vehicle-images img {
+    max-width: 100%;
+    height: auto;
+}
+.vehicle-info {
+    flex: 1;
+}
+.vehicle-info h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.vehicle-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.vehicle-info .btn {
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.vehicle-info .btn:hover {
+    background-color: #555;
+}
+
+/* Vehicle List */
+.vehicle-list {
+    padding: 50px 0;
+}
+.vehicle-list h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.search-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.search-filters label {
+    margin-right: 10px;
+}
+.search-filters input,
+.search-filters select {
+    margin-right: 20px;
+    padding: 5px;
+}
+.vehicles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.vehicle-item {
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+.vehicle-item img {
+    max-width: 100%;
+    height: auto;
+}
+.vehicle-item h3 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+.vehicle-item p {
+    color: #666;
+}
+.vehicle-item .btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.vehicle-item .btn:hover {
+    background-color: #555;
+}
