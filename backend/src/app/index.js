@@ -5,7 +5,7 @@ import cors from "cors";
 import { config } from "dotenv";
 config();
 
-// import { routes } from "./routes";
+import routes from "../modules/routes";
 
 const app = express();
 
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Routes
-// app.use("/api/v1", routes);
+app.use("/api/v1", routes);
 
 const PORT = process.env.PORT || 3000;
 
