@@ -34,4 +34,69 @@ model User {
   // Relations
   role_id Int
   role    Role @relation(fields: [role_id], references: [id])
+
+  Booking Booking[]
+  Comment Comment[]
+}
+
+model Booking {
+  id                 Int      @id @default(autoincrement())
+  booking_date       DateTime @default(now())
+  date_time_pickup   DateTime
+  date_time_delivery DateTime
+  status             String   @db.VarChar(128)
+  total_price        Float
+
+  // Relations
+  user_id     Int
+  user        User      @relation(fields: [user_id], references: [id])
+  location_id Int
+  location    Location  @relation(fields: [location_id], references: [id])
+  vehicle_id  Int
+  vehicle     Vehicle   @relation(fields: [vehicle_id], references: [id])
+  Comment     Comment[]
+}
+
+model Comment {
+  id         Int      @id @default(autoincrement())
+  rate       Int
+  comment    String   @db.Text
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  // Relations
+  user_id    Int
+  user       User    @relation(fields: [user_id], references: [id])
+  booking_id Int
+  booking    Booking @relation(fields: [booking_id], references: [id])
+}
+
+model Location {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  address     String   @db.VarChar(255)
+  city        String   @db.VarChar(128)
+  state       String   @db.VarChar(128)
+  postal_code String   @db.VarChar(128)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  // Relations
+  Booking Booking[]
+}
+
+model Vehicle {
+  id            Int      @id @default(autoincrement())
+  brand         String   @db.VarChar(255)
+  model         String   @db.VarChar(128)
+  year          Int
+  color         String   @db.VarChar(128)
+  license_plate String   @db.VarChar(128)
+  status        String   @db.VarChar(255)
+  rate          Float
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  // Relations
+  Booking Booking[]
 }
