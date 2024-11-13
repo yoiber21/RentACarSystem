@@ -11,3 +11,12 @@ function validateReservationForm() {
 
     return true;
 }
+
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const track = document.querySelector('.carousel-track');
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}

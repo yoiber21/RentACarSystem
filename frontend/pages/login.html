@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Iniciar Sesión - Rent a Car</title>
 </head>
 
 <body>
-    <!-- Encabezado (Header) -->
+    <!-- Encabezado -->
     <header>
         <div class="container">
             <a href="../index.html" class="logo">Rent a Car</a>
@@ -18,25 +18,38 @@
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="vehicles.html">Vehículos</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <!-- Opciones para usuarios no autenticados -->
                     <li><a href="login.html">Iniciar Sesión</a></li>
                     <li><a href="register.html">Registrarse</a></li>
-                    <!-- Si el usuario está autenticado, muestra estas opciones -->
-                    <!--
-          <li><a href="/pages/user_dashboard.html">Mi Cuenta</a></li>
-          <li><a href="/logout.html">Cerrar Sesión</a></li>
-          -->
                 </ul>
             </nav>
         </div>
     </header>
-    <!-- Pie de página (Footer) -->
-<footer>
-    <div class="container">
-      <p>&copy; 2023 Rent a Car. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-  <script src="../js/main.js"></script>
+
+    <!-- Contenido principal de la página de login -->
+    <section class="login-form">
+        <div class="container">
+            <h2>Iniciar Sesión</h2>
+            <form action="#" method="POST">
+                <label for="correo_electronico">Correo Electrónico:</label>
+                <input type="email" id="correo_electronico" name="correo_electronico" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a>.</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Rent a Car. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
