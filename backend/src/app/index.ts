@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import path from 'path';
 
 import { config } from "dotenv";
 config();
@@ -20,16 +19,11 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../../../frontend')));
 
 // Console logger
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-
-app.get('/api/v1', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../frontend/index.html'));
-});
 
 // Routes
 app.use("/api/v1", routes);
