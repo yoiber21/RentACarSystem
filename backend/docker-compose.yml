@@ -1,13 +1,32 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  mysql-db:
-    image: mysql
-    restart: always
+  app:
+    image: node:16
+    container_name: backend-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      MYSQL_USER: ${DB_USER}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
+      - DATABASE_URL=${DATABASE_URL}
     ports:
-      - 3306:3306
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - backend-network
+
+  db:
+    image: mysql:8.0
+    container_name: backend-mysql-db-1
+    environment:
+      MYSQL_ROOT_PASSWORD: 9&vUb99t
+      MYSQL_DATABASE: RentACarSystemDB
+    ports:
+      - "3306:3306"
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
