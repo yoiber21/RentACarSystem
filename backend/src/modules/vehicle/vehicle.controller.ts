@@ -46,12 +46,8 @@ export class VehicleController {
   async changeVehicleStatus(req: Request, res: Response) {
     try {
       const { vehicle_id } = req.params;
-      if (!vehicle_id)
-        return res
-          .status(400)
-          .send({ ok: false, error: "Vehicle ID is required" });
-
       const { status } = req.body;
+
       const vehicle = await this.vehicleService.getVehicleById(+vehicle_id);
       if (!vehicle)
         return res.status(404).send({ ok: false, error: "Vehicle not found" });

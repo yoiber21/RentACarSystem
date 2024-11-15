@@ -32,10 +32,10 @@ export class VehicleService {
     };
   }
 
-  async updateVehicleStatus(vehicleId: number, status: string) {
+  async updateVehicleStatus(vehicle_id: number, status: string) {
     const updatedVehicle = await rentACarSystemDB.vehicle.update({
       where: {
-        id: vehicleId,
+        id: vehicle_id,
       },
       data: {
         status,
