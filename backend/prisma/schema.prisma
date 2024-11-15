@@ -94,6 +94,7 @@ model Vehicle {
   license_plate String   @db.VarChar(128)
   status        String   @db.VarChar(255)
   rate          Float
+  image_url     String   @db.VarChar(512)
   created_at    DateTime @default(now())
   updated_at    DateTime @updatedAt
 
