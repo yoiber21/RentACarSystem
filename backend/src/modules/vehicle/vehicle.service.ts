@@ -10,6 +10,16 @@ export class VehicleService {
     return newVehicle;
   }
 
+  async getVehicleById(vehicleId: number): Promise<VehicleModel | null> {
+    const vehicle = await rentACarSystemDB.vehicle.findUnique({
+      where: {
+        id: vehicleId,
+      },
+    });
+
+    return vehicle;
+  }
+
   async getAllVehicles() {
     const [vehicles, total] = await Promise.all([
       rentACarSystemDB.vehicle.findMany(),
@@ -20,5 +30,18 @@ export class VehicleService {
       vehicles,
       total,
     };
+  }
+
+  async updateVehicleStatus(vehicleId: number, status: string) {
+    const updatedVehicle = await rentACarSystemDB.vehicle.update({
+      where: {
+        id: vehicleId,
+      },
+      data: {
+        status,
+      },
+    });
+
+    return updatedVehicle;
   }
 }

@@ -14,4 +14,9 @@ vehicleRouter.post(
 
 vehicleRouter.get("/", vehicleController.getVehicles.bind(vehicleController));
 
+vehicleRouter.patch(
+  "/:vehicle_id",
+  vehicleController.changeVehicleStatus.bind(vehicleController)
+);
+
 export default vehicleRouter;

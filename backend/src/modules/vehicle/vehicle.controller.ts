@@ -42,4 +42,34 @@ export class VehicleController {
       res.status(500).send({ ok: false, error: "Internal server error" });
     }
   }
+
+  async changeVehicleStatus(req: Request, res: Response) {
+    try {
+      const { vehicle_id } = req.params;
+      if (!vehicle_id)
+        return res
+          .status(400)
+          .send({ ok: false, error: "Vehicle ID is required" });
+
+      const { status } = req.body;
+      const vehicle = await this.vehicleService.getVehicleById(+vehicle_id);
+      if (!vehicle)
+        return res.status(404).send({ ok: false, error: "Vehicle not found" });
+
+      const updatedVehicle = await this.vehicleService.updateVehicleStatus(
+        +vehicle_id,
+        status
+      );
+
+      res.status(200).send({
+        ok: true,
+        message: "Vehicle status updated successfully",
+        vehicle: updatedVehicle,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).send({ ok: false, error: "Internal server error" });
+    }
+  }
 }
