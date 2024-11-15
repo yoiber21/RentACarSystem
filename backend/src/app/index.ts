@@ -10,7 +10,7 @@ import routes from "../modules/routes";
 const app = express();
 
 const allowedOrigins = ["http://localhost:3000", "http://localhost:8080"];
-const options = {
+const options: cors.CorsOptions = {
   origin: allowedOrigins,
   credentials: true,
 };

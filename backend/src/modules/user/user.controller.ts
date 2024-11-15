@@ -1,11 +1,14 @@
+import { Request, Response } from "express";
 import { UserService } from "./user.service";
 
 export class UserController {
+  userService: UserService;
+
   constructor(userService) {
     this.userService = userService;
   }
 
-  async createUser(req, res) {
+  async createUser(req: Request, res: Response) {
     try {
       const userData = req.body;
 
