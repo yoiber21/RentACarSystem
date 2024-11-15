@@ -30,14 +30,37 @@
             </nav>
         </div>
     </header>
-    <!-- Pie de página (Footer) -->
-<footer>
-    <div class="container">
-      <p>&copy; 2023 Rent a Car. Todos los derechos reservados.</p>
-    </div>
-  </footer>
 
-  <script src="../js/main.js"></script>
+    <section class="car-carousel">
+        <h2>Explora Nuestros Vehículos</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track">
+                <!-- Cada categoría de autos con su mapa -->
+                <div class="carousel-slide">
+                    <h3>Bogota-Modelia</h3>
+                    <img src="../img/Car1.jpg" alt="Carro 1 de Ciudad A">
+                    <img src="../img/Car2.jpg" alt="Carro 2 de Ciudad A">
+                </div>
+                <div class="carousel-slide">
+                    <h3>Bogota-Chapinero</h3>
+                    <img src="../img/Car3.jpg" alt="Carro 1 de Ciudad B">
+                    <img src="../img/Car4.jpg" alt="Carro 2 de Ciudad B">
+                </div>
+                <!-- Agrega más mapas y vehículos según sea necesario -->
+            </div>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+    <!-- Pie de página (Footer) -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Rent a Car. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
