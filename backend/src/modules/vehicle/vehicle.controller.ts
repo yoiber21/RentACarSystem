@@ -26,4 +26,20 @@ export class VehicleController {
       res.status(500).send({ ok: false, error: "Internal server error" });
     }
   }
+
+  async getVehicles(req: Request, res: Response) {
+    try {
+      const data = await this.vehicleService.getAllVehicles();
+
+      res.status(200).send({
+        ok: true,
+        message: "Vehicles retrieved successfully",
+        ...data,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).send({ ok: false, error: "Internal server error" });
+    }
+  }
 }

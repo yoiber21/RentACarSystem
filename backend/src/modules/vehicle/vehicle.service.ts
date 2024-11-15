@@ -9,4 +9,16 @@ export class VehicleService {
 
     return newVehicle;
   }
+
+  async getAllVehicles() {
+    const [vehicles, total] = await Promise.all([
+      rentACarSystemDB.vehicle.findMany(),
+      rentACarSystemDB.vehicle.count(),
+    ]);
+
+    return {
+      vehicles,
+      total,
+    };
+  }
 }

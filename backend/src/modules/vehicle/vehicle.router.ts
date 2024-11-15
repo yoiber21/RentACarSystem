@@ -12,4 +12,6 @@ vehicleRouter.post(
   vehicleController.createVehicle.bind(vehicleController)
 );
 
+vehicleRouter.get("/", vehicleController.getVehicles.bind(vehicleController));
+
 export default vehicleRouter;
